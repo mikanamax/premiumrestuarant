@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="css/myrestuarant.css" type="text/css">
+  <title>Maxwell Premium Restuarant</title>
+</head>
+
+
+<body class="m-0">
+  
+  <!--- NAVBAR -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Maxwell Premium Restaurant</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#menu">Menu</a>
+          </li>
+
+          <li class="nav-item mx-2">
+              <a class="nav-link" href="orders.html">Orders</a>
+            </li>
+
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#footer">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  <div class="align-items-center d-flex py-5 cover text-white photo-overlay"
+    style="background-image: url(&quot;assets/cover_dark.jpg&quot;);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 align-self-center text-lg-left text-center">
+          <h1 class="mb-0 mt-4 display-3 text-center">Maxwell Premium Restuarant
+            <br> </h1>
+          <p class="mb-5 lead text-uppercase text-center">Every Thing Edge.</p>
+        </div>
+        <div class="col-lg-5 p-3">
+          <form class="p-4 bg-dark-opaque" method="post"></form>
+          <h4 class="mb-4 text-center alert lead">See Menu Below Before placing Reservations.</h4>
+          <h4 class="mb-4 text-center">Make a reservation</h4>
+          <div class="form-group"> <label>Your name.</label>
+            <input class="form-control" id = "name" placeholder="Your-Name"></div>
+          <div class="form-group"> <label>Check in time.</label>
+            <input type="time" class="form-control" id = "time" placeholder="13"> </div>
+          <div class="form-group"> <label>Meal.</label>
+            <input class="form-control" id="Meal" placeholder="Your-Meal"> </div>
+          <div class="form-group"> <label>Number of persons ( Note 5 at most).</label>
+            <div id="totalprice"></div>
+            <input type="number" class="form-control" id="users" placeholder="5" onclick="getTotal()"> </div>
+          <button id="placeOrder">Order Reservations</button>
+          </form>
+        </div>
+        <div id="confirmation"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COVER (SMART CONTRACT HERE). -->
+
+  
+
+  <!-- GALLERIE D'IMAGES -->
+  <div class="galerie">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_12_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_11_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_10_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_9_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_8_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_7_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <div id="menu"></div>
+          <img src="assets/food_5_dark.jpg" class="img-fluid">
+        </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_6_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_4_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_3_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_2_dark.jpg" class="img-fluid"> </div>
+        <div class="p-0 col-md-2 col-4 photo-overlay">
+          <img src="assets/food_1_dark.jpg" class="img-fluid"> </div>
+      </div>
+    </div>
+  </div>
+  <!-- MENU -->
+  <div class="text-center bg-dark py-0">
+    <div class="container">
+      <div class="row p-4 animate-in-down bg-dark text-light">
+        <div class="col-md-12 border border-light">
+          <h2 class="mt-3">Menu</h2>
+          <p class="mb-5">All Meal List</p>
+          <div class="row">
+            <div class="col-md-4">
+              <h5>Check Out</h5>
+              <ul class="list-unstyled">
+                <li class="my-4">African.&nbsp;
+                  <br>[ Egusi soup ]</li>
+                <li class="my-4">Ghana. &nbsp;
+                  <br>[ Jollof Rice]</li>
+                <li class="my-4">Chinese
+                  <br>[ Noodles ]</li>
+                <li class="my-4">Japanese&nbsp;
+                  <br>[ Spaghetti ]</li>
+                <li class="my-4">German. &nbsp;
+                  <br>[ Ham hok ]</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-unstyled">
+                <li class="my-4">American&nbsp;
+                  <br>[ Fruit Salad. ]</li>
+                <li class="my-4">Isreali
+                  <br>[ Brunch ]</li>
+                <li class="my-4">British
+                  <br>[ snack plate ]</li>
+                <li class="my-4">Italian&nbsp;
+                  <br>[ Fruity Mix ]</li>
+                <li class="my-4">French&nbsp;
+                  <br>[ chinken soup ]</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-unstyled">
+                <li class="my-4"> Argentina
+                  <br>[ Asado ]</li>
+                <li class="my-4"> Mexican
+                  <br>[ Taco ]</li>
+                <li class="my-4"> Canadian
+                  <br>[ pemmican ]</li>
+                <li class="my-4">Indian
+                  <br>[ Alu Gobi ]</li>
+                <li class="my-4">Russian.&nbsp;
+                  <br>[ Borscht ]</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="body">
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="col-md-12 mt-3">
+    <p class="text-center text-muted"> © copy right Aeternity development 101. </p>
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- SCRIPT -->
+  <script id="template" type="x-tmpl-mustache">
+        {{#orderArray}}
+    <div>
+        <center>
+          <h2>Recent Orders</h2>
+        </center>
+        <p>On {{timestamp}}, the meal {{meal}} was ordered by this address {{owner}} for {{users}} people at the price of {{price}} aettos</p>
+
+    </div>
+    {{/orderArray}}
+</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/i18n/jquery.colorbox-ar.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" crossorigin="anonymous"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"></script>
+  <script src="js/smooth-scroll.js"></script>
+  <script src="js/navbar-ontop.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+  <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
