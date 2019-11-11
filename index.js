@@ -128,7 +128,7 @@ async function contractCall(func, args, value) {
 }
 
 window.addEventListener('load', async () => {
-    $("#loadings").show();
+    $("#load").show();
 
     client = await Ae.Aepp()
 
@@ -158,7 +158,7 @@ window.addEventListener('load', async () => {
         })
     }
     renderProduct();
-    $("#loadings").hide();
+    $("#load").hide();
 });
 
 
@@ -174,7 +174,7 @@ function getTotal(){
 
 
 $('#placeOrder').click(async function () {
-    $("#loadings").show();
+    $("#load").show();
 
     name = ($('#name').val()),
 
@@ -206,7 +206,7 @@ $('#placeOrder').click(async function () {
     })
     renderProduct();
     // location.reload(true);
-    $("#loadings").hide();
+    $("#load").hide();
 
     console.log("SUCCESSFUL")
 
