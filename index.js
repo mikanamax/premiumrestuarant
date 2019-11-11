@@ -95,7 +95,7 @@ function renderProduct() {
 
 
     $('#body').html(rendered);
-    console.log("for loop reached")
+    console.log("rendered")
 }
 // //Create a asynchronous read call for our smart contract
 async function callStatic(func, args) {
@@ -103,15 +103,13 @@ async function callStatic(func, args) {
     const contract = await client.getContractInstance(contractSource, {
         contractAddress
     });
-    //Make a call to get data of smart contract func, with specefied arguments
-    console.log("Contract : ", contract)
+    
     const calledGet = await contract.call(func, args, {
         callStatic: true
     }).catch(e => console.error(e));
-    //Make another call to decode the data received in first call
-    console.log("Called get found: ", calledGet)
+    
     const decodedGet = await calledGet.decode().catch(e => console.error(e));
-    console.log("catching errors : ", decodedGet)
+  
     return decodedGet;
 }
 
@@ -128,7 +126,7 @@ async function contractCall(func, args, value) {
 }
 
 window.addEventListener('load', async () => {
-    $(".loading-container").show();
+    $(".spinner").show();
 
     client = await Ae.Aepp()
 
@@ -139,11 +137,6 @@ window.addEventListener('load', async () => {
         const Orders = await callStatic('getOrder', [i]);
 
         console.log("for loop reached", "pushing to array")
-
-        console.log(Orders.name)
-        console.log(Orders.mean)
-        console.log(Orders.Price)
-
 
         orderArray.push({
             meal: Orders.meal,
@@ -158,7 +151,7 @@ window.addEventListener('load', async () => {
         })
     }
     renderProduct();
-    $(".loading-container").hide();
+    $(".spinner").hide();
 });
 
 
@@ -174,7 +167,7 @@ function getTotal(){
 
 
 $('#placeOrder').click(async function () {
-    $(".loading-container").show();
+    $(".spinner").show();
 
     name = ($('#name').val()),
 
@@ -185,14 +178,6 @@ $('#placeOrder').click(async function () {
 
         price = users * 300
     await contractCall('createReservation', [name, meal, price, users], parseInt(price,10))
-
-    console.log(name)
-    console.log(meal)
-    console.log(price)
-
-    
-
-
 
 
     orderArray.push({
@@ -205,8 +190,8 @@ $('#placeOrder').click(async function () {
 
     })
     renderProduct();
-    // location.reload(true);
-    $(".loading-container").hide();
+
+    $(".spinner").hide();
 
     console.log("SUCCESSFUL")
 
