@@ -3,7 +3,7 @@
     margin-left: -20px;
     top: 50%;
     margin-top: -20px;
-    position: absolute;
+    position: fixed;
     z-index: 19 !important;
     animation: loading-bar-spinner 400ms linear infinite;
 }
@@ -12,8 +12,8 @@
     width: 40px;
     height: 40px;
     border:  solid 4px transparent;
-    border-top-color:  #00C8B1 !important;
-    border-left-color: #00C8B1 !important;
+    border-top-color: black !important;
+    border-left-color: black !important;
     border-radius: 50%;
 }
 
